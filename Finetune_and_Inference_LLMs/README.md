@@ -22,7 +22,8 @@ This project provides modular components for:
 ├── dataset.py        # Dataset loading and preprocessing utilities
 ├── trainer.py        # Custom training loop with progress tracking
 ├── deployer.py       # Deployment utilities for batch predictions
-└── pipelines.py      # Pre-built pipelines for common tasks
+├── pipelines.py      # Pre-built pipelines for common tasks
+└── run.sh            # Bash script for quick training and inference
 ```
 
 ## Installation
@@ -33,7 +34,49 @@ pip install torch transformers datasets tqdm
 
 ## Usage
 
-### Command-Line Interface
+### Quick Start with Bash Script
+
+Make the script executable:
+```bash
+chmod +x run.sh
+```
+
+#### Available Commands
+
+**Train BERT:**
+```bash
+./run.sh train-bert
+```
+
+**Run BERT Inference:**
+```bash
+./run.sh inference-bert --sentence "I love this movie!"
+```
+
+**Fine-tune Phi-3:**
+```bash
+./run.sh train-phi
+```
+
+**Fine-tune Qwen2:**
+```bash
+./run.sh train-qwen
+```
+
+**Run Causal LM Inference:**
+```bash
+./run.sh inference-causal --sentence "Explain AI" --device mps
+```
+
+**Run Batch Deployment:**
+```bash
+./run.sh deploy
+```
+
+#### Bash Script Options
+- `--sentence TEXT`: Input sentence for inference
+- `--device DEVICE`: Device (cuda, mps, or cpu)
+
 
 #### Sentiment Analysis - Training
 
