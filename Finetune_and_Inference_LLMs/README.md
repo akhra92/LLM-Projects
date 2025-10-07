@@ -90,34 +90,6 @@ python main.py \
 | `--max_length` | int | 128 | Maximum token length |
 | `--device` | str | `mps` | Device: `cuda`, `mps`, or `cpu` |
 
-## Training Configuration
-
-### BERT Fine-tuning
-- Optimizer: AdamW
-- Learning rate: 2e-5
-- Weight decay: 0.01
-- Training samples: 1000 (shuffled)
-- Validation samples: 500 (shuffled)
-
-### Phi-3 Fine-tuning
-- Gradient checkpointing enabled
-- FP16 training
-- Max sequence length: 8 tokens
-- Dataset: Yelp Review Full (500 samples)
-
-### Qwen2 Fine-tuning
-- Gradient checkpointing enabled
-- FP16 training
-- Max sequence length: 128 tokens
-- 3 epochs
-- Learning rate: 5e-5
-
-## Device Support
-
-The framework supports multiple devices:
-- **CUDA**: NVIDIA GPUs
-- **MPS**: Apple Silicon (M1/M2/M3)
-- **CPU**: Fallback for systems without GPU
 
 ## Notes
 
